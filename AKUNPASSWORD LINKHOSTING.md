@@ -1,15 +1,18 @@
 # DATA AKUN
-ADMIN 
+# ADMIN 
 - username: admin
 - email: admin@inventaris.com
 - password: 123
 
-PETUGAS
+# PETUGAS
 - username: petugas
 - email: petugas@inventaris.com
 - password: 123
 
-PENGGUNA
+# PENGGUNA
 - username: pengguna
 - email: pengguna@inventaris.com
 - password: 123
+
+# LINK HOSTING
+- https://inventaris-ukk.wuaze.com/?i=1
