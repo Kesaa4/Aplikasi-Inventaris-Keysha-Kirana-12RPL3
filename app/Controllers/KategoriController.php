@@ -4,16 +4,19 @@ namespace App\Controllers;
 
 use App\Models\KategoriModel;
 use App\Models\LogAktivitasModel;
+use App\Models\BarangModel;
 
 class KategoriController extends BaseController
 {
     protected $kategoriModel;
     protected $logModel;
+    protected $barangModel;
 
     public function __construct()
     {
         $this->kategoriModel = new KategoriModel();
         $this->logModel = new LogAktivitasModel();
+        $this->barangModel = new BarangModel();
     }
 
     public function index()
@@ -71,11 +74,21 @@ class KategoriController extends BaseController
     public function delete($id)
     {
         $kategori = $this->kategoriModel->find($id);
+
+        $barang = $this->barangModel
+                        ->where('kategori_id', $id)
+                        ->first();
+
+        if ($barang) {
+            return redirect()->back()->with('error', 'Kategori masih digunakan oleh data barang, tidak bisa dihapus!');
+        }
+
         if ($this->kategoriModel->delete($id)) {
             $this->logModel->logAktivitas('Hapus', 'Kategori', 'Menghapus kategori: ' . $kategori['nama_kategori']);
             return redirect()->to('/kategori')->with('success', 'Data berhasil dihapus');
         }
-        return redirect()->back()->with('error', 'Gagal menghapus data');
+
+        return redirect();
     }
 
     public function detail($id)
