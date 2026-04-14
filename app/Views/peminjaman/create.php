@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Estimasi Tanggal Kembali <span class="text-danger">*</span></label>
-                    <input type="date" name="tanggal_kembali" class="form-control" value="<?= old('tanggal_kembali') ?>" required>
+                    <input type="date" name="tanggal_kembali" class="form-control" value="<?= old('tanggal_kembali') ?>" min="<?= old('tanggal_pinjam') ?? date('Y-m-d'); ?>" required>
                 </div>
             </div>
             <div class="mb-3">

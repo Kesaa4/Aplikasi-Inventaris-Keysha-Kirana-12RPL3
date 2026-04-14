@@ -65,29 +65,40 @@ class PeminjamanController extends BaseController
     public function store()
     {
         $barangId = $this->request->getPost('barang_id');
-        $barang = $this->barangModel->find($barangId);
-        
-        if ($barang['status'] != 'tersedia') {
-            return redirect()->back()->withInput()->with('error', 'Barang tidak tersedia/sedang dipinjam!');
+        $barang   = $this->barangModel->find($barangId);
+
+        $tanggalPinjam   = $this->request->getPost('tanggal_pinjam');
+        $tanggalKembali  = $this->request->getPost('tanggal_kembali');
+        $keperluan       = $this->request->getPost('keperluan');
+
+        if ($tanggalKembali < $tanggalPinjam) {
+            return redirect()->back()->withInput()->with('error', 'Tanggal kembali tidak boleh sebelum tanggal pinjam');
         }
         
         $kode = 'PJM-' . date('Ymd') . '-' . rand(1000, 9999);
 
         $data = [
             'kode_peminjaman' => $kode,
-            'user_id' => session()->get('user_id'),
-            'barang_id' => $barangId,
-            'tanggal_pinjam' => $this->request->getPost('tanggal_pinjam'),
-            'tanggal_kembali' => $this->request->getPost('tanggal_kembali'),
-            'keperluan' => $this->request->getPost('keperluan'),
-            'status' => 'pending'
+            'user_id'         => session()->get('user_id'),
+            'barang_id'       => $barangId,
+            'tanggal_pinjam'  => $tanggalPinjam,
+            'tanggal_kembali' => $tanggalKembali,
+            'keperluan'       => $keperluan,
+            'status'          => 'pending'
         ];
-
+        
         if ($this->peminjamanModel->insert($data)) {
             $this->barangModel->update($barangId, ['status' => 'dipinjam']);
-            $this->logModel->logAktivitas('Ajukan', 'Peminjaman', 'Mengajukan peminjaman: ' . $kode . ' - ' . $barang['kode_barang']);
+
+            $this->logModel->logAktivitas(
+                'Ajukan',
+                'Peminjaman',
+                'Mengajukan peminjaman: ' . $kode . ' - ' . $barang['kode_barang']
+            );
+
             return redirect()->to('/peminjaman')->with('success', 'Pengajuan peminjaman berhasil');
         }
+
         return redirect()->back()->withInput()->with('errors', $this->peminjamanModel->errors());
     }
 

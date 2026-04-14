@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 07 Apr 2026 pada 05.54
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+-- Host: sql210.infinityfree.com
+-- Waktu pembuatan: 14 Apr 2026 pada 12.18
+-- Versi server: 11.4.10-MariaDB
+-- Versi PHP: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `inventaris_db`
+-- Database: `if0_41598177_inventaris_db`
 --
 
 -- --------------------------------------------------------
@@ -46,26 +47,19 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id`, `kode_barang`, `merek_barang`, `tipe_barang`, `kategori_id`, `kondisi`, `status`, `lokasi`, `keterangan`, `created_at`, `updated_at`) VALUES
-(2, 'F1DN502024050206', 'Daniswara Amanah Cipta (DAC)', 'F1 DN50', 1, 'baik', 'tersedia', 'Ruang Keuangan Gedung A, lt.2', 'Intel Core i3-1215U Gen 12, RAM 8GB, SSD 256GB', '2026-03-10 10:07:45', '2026-04-05 17:45:59'),
-(4, 'SE2219HX', 'LENOVO', 'ThinkCentre Neo 50a 24 Gen 5', 2, 'baik', 'tersedia', 'Ruang Informasi Gedung A, lt.1', 'ADALAH', '2026-03-10 21:24:46', '2026-04-05 18:06:12'),
-(5, '11SC0050ID', 'HP', 'HP EliteBook 840 G11 Business Laptop Wolf Pro Security Edition', 1, 'baik', 'dipinjam', 'Ruang Keuangan', '14 inch', '2026-03-13 16:47:10', '2026-04-05 11:33:03'),
-(10, 'FX506HC-HN011T', 'ASUS', 'TUF Gaming F15', 1, 'rusak', 'tidak tersedia', 'Ruang IT', 'i5-11400H, RTX 3050, 8GB, SSD 512GB', '2026-04-05 10:20:46', '2026-04-05 11:15:11'),
-(11, 'A515-57-59KS', 'ACER', 'Aspire 5', 1, 'baik', 'tersedia', 'Ruang Admin', 'i5-1235U, 8GB, SSD 512GB', '2026-04-05 11:30:57', '2026-04-05 11:30:57'),
-(12, '82KU00WVID', 'LENOVO', 'IdeaPad 3', 1, 'baik', 'tersedia', 'Ruang Informasi', 'Ryzen 5 5500U, 8GB', '2026-04-05 11:31:48', '2026-04-05 11:32:39'),
-(13, '14-ec1073AU', 'HP', 'Pavilion 14', 1, 'baik', 'tersedia', 'Ruang Keuangan', 'Ryzen 5, 8GB', '2026-04-05 11:32:22', '2026-04-05 11:32:22'),
-(14, 'INS14-5410', 'DELL', 'Inspiron 14', 1, 'rusak', 'tidak tersedia', 'Ruang Informasi', 'i3, 4GB', '2026-04-05 11:33:48', '2026-04-05 11:34:11'),
-(15, 'M70S-11EXS00', 'LENOVO', 'ThinkCentre M70s', 2, 'baik', 'tersedia', 'Laboratorium Gedung B', 'i5-10400, 8GB', '2026-04-05 11:34:58', '2026-04-05 11:34:58'),
+(4, 'SE2219HX', 'LENOVO', 'ThinkCentre Neo 50a 24 Gen 5', 2, 'baik', 'dipinjam', 'Ruang Informasi Gedung A, lt.1', 'ADALAH', '2026-03-10 21:24:46', '2026-04-09 07:18:38'),
+(15, 'M70S-11EXS00', 'LENOVO', 'ThinkCentre M70s', 2, 'baik', 'dipinjam', 'Laboratorium Gedung B', 'i5-10400', '2026-04-05 11:34:58', '2026-04-14 23:05:51'),
 (16, '3090MT-210', 'DELL', 'OptiPlex 3090', 2, 'rusak', 'tidak tersedia', 'Ruang Informasi', 'i5 Gen10, 8GB', '2026-04-05 11:41:03', '2026-04-05 11:41:03'),
 (17, '400G7-SFF', 'HP', 'ProDesk 400 G7', 2, 'baik', 'tersedia', 'Laboratorium Gedung B', 'i3, 8GB', '2026-04-05 11:41:38', '2026-04-05 11:41:38'),
 (18, 'D500TC-310105', 'ASUS', 'ExpertCenter D5', 2, 'rusak', 'tidak tersedia', 'Ruang Informasi', 'i5, 4GB', '2026-04-05 11:42:50', '2026-04-05 11:42:50'),
 (19, 'VM4660G-I585', 'ACER', 'Veriton M4660G', 2, 'baik', 'tersedia', 'Laboratorium Gedung B', 'i5, 8GB', '2026-04-05 11:44:02', '2026-04-05 11:44:02'),
 (20, '24MK600M-B', 'LG', '24MK600M', 3, 'baik', 'tersedia', 'Laboratorium Gedung B', '24\" IPS FHD', '2026-04-05 11:44:44', '2026-04-05 11:44:44'),
-(21, 'LF24T350FHEXXD', 'SAMSUNG', 'T350', 3, 'baik', 'tersedia', 'Laboratorium Gedung B', '24\" LED', '2026-04-05 11:45:30', '2026-04-05 11:45:30'),
-(22, 'VA24EHE', 'ASUS', 'VA24EHE', 3, 'baik', 'tersedia', 'Ruang IT', 'IPS 75Hz', '2026-04-05 20:16:36', '2026-04-05 20:16:36'),
-(23, 'PROMP241', 'MSI', 'Pro MP241', 3, 'baik', 'tersedia', 'Ruang IT', '23.8\"', '2026-04-05 20:18:39', '2026-04-05 20:18:39'),
+(21, 'LF24T350FHEXXD', 'SAMSUNG', 'T350', 3, 'baik', 'tersedia', 'Laboratorium Gedung B', '24\" LED', '2026-04-05 11:45:30', '2026-04-13 07:53:52'),
+(23, 'PROMP241', 'MSI', 'Pro MP241', 3, 'baik', 'dipinjam', 'Ruang IT', '23.8\"', '2026-04-05 20:18:39', '2026-04-12 19:12:50'),
 (24, 'E2422H', 'DELL', 'E2422H', 3, 'rusak', 'tidak tersedia', 'Ruang Informasi', '24\"', '2026-04-05 20:19:40', '2026-04-05 20:19:40'),
 (25, 'L3210', 'EPSON', 'EcoTank L3210', 4, 'baik', 'tersedia', 'Ruang Informasi', 'Print Scan Copy', '2026-04-05 20:20:32', '2026-04-05 20:20:32'),
-(26, 'G3020', 'EPSON', 'PIXMA G3020	', 4, 'baik', 'tersedia', 'Ruang Informasi', 'Wireless Ink Tank', '2026-04-05 20:30:55', '2026-04-05 20:30:55');
+(26, 'G3020', 'EPSON', 'PIXMA G3020	', 4, 'baik', 'tersedia', 'Ruang Informasi', 'Wireless Ink Tank', '2026-04-05 20:30:55', '2026-04-05 20:30:55'),
+(27, 'L82', 'LENOVO', 'lenovo', 13, 'baik', 'dipinjam', 'Ruang Informasi', 'RAM 16GB', '2026-04-13 07:56:48', '2026-04-14 23:09:17');
 
 -- --------------------------------------------------------
 
@@ -86,13 +80,13 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id`, `nama_kategori`, `keterangan`, `created_at`, `updated_at`) VALUES
-(1, 'Laptop', '-', '2026-03-10 09:34:00', '2026-04-05 17:47:57'),
-(2, 'Personal Computer', 'Belum 1 set', '2026-03-10 09:34:00', NULL),
+(2, 'PC', 'Belum 1 set', '2026-03-10 09:34:00', '2026-04-13 07:59:36'),
 (3, 'Monitor', 'Untuk PC', '2026-03-10 09:34:00', NULL),
 (4, 'Printer', 'Lengkap', '2026-03-10 09:44:42', '2026-03-10 10:03:22'),
 (9, 'Kamera', '-', '2026-04-05 09:32:07', '2026-04-05 09:32:07'),
 (10, 'Scanner', '-', '2026-04-05 09:32:19', '2026-04-05 09:32:19'),
-(11, 'Handphone', '-', '2026-04-05 09:32:24', '2026-04-05 09:32:29');
+(13, 'Laptop', '', '2026-04-12 19:56:30', '2026-04-12 19:56:30'),
+(14, 'Handphone', '', '2026-04-13 08:00:29', '2026-04-13 08:00:29');
 
 -- --------------------------------------------------------
 
@@ -412,7 +406,127 @@ INSERT INTO `log_aktivitas` (`id`, `user_id`, `username`, `aksi`, `modul`, `kete
 (296, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-05 20:31:32'),
 (297, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-06 11:17:00'),
 (298, 1, 'admin', 'Update', 'User', 'Mengupdate user: admin', '2026-04-06 11:18:24'),
-(299, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-06 12:25:21');
+(299, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-06 12:25:21'),
+(300, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-07 14:55:49'),
+(301, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-07 15:03:16'),
+(302, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-07 15:12:06'),
+(303, 16, 'keysha', 'Login', 'Auth', 'User keysha berhasil login', '2026-04-07 15:14:09'),
+(304, 16, 'keysha', 'Logout', 'Auth', 'User keysha logout', '2026-04-07 15:14:28'),
+(305, NULL, 'Guest', 'Logout', 'Auth', 'User  logout', '2026-04-07 15:14:35'),
+(306, 18, 'ale', 'Login', 'Auth', 'User ale berhasil login', '2026-04-07 15:15:01'),
+(307, 18, 'ale', 'Ajukan', 'Peminjaman', 'Mengajukan peminjaman: PJM-20260407-2065 - 82KU00WVID', '2026-04-07 15:15:30'),
+(308, 1, 'admin', 'Hapus', 'User', 'Menghapus user: karina', '2026-04-07 15:18:22'),
+(309, 1, 'admin', 'Hapus', 'User', 'Menghapus user: minjeong', '2026-04-07 15:18:26'),
+(310, 1, 'admin', 'Hapus', 'User', 'Menghapus user: ning', '2026-04-07 15:18:30'),
+(311, 1, 'admin', 'Hapus', 'User', 'Menghapus user: dea', '2026-04-07 15:18:35'),
+(312, 18, 'ale', 'Login', 'Auth', 'User ale berhasil login', '2026-04-07 15:20:31'),
+(313, NULL, 'Guest', 'Register', 'Auth', 'User baru ali berhasil registrasi', '2026-04-07 15:20:50'),
+(314, 18, 'ale', 'Logout', 'Auth', 'User ale logout', '2026-04-07 15:21:49'),
+(315, 1, 'admin', 'Update', 'User', 'Mengupdate user: ali', '2026-04-07 15:24:02'),
+(316, 18, 'ale', 'Logout', 'Auth', 'User ale logout', '2026-04-07 15:24:59'),
+(317, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-07 15:28:19'),
+(318, NULL, 'Guest', 'Register', 'Auth', 'User baru kinanti berhasil registrasi', '2026-04-07 15:30:15'),
+(319, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-07 15:31:36'),
+(320, 1, 'admin', 'Hapus', 'User', 'Menghapus user: kinan', '2026-04-07 15:32:17'),
+(321, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-07 15:33:01'),
+(322, NULL, 'Guest', 'Register', 'Auth', 'User baru dea berhasil registrasi', '2026-04-08 06:36:35'),
+(323, 18, 'ale', 'Login', 'Auth', 'User ale berhasil login', '2026-04-08 06:37:01'),
+(324, 18, 'ale', 'Logout', 'Auth', 'User ale logout', '2026-04-08 06:37:17'),
+(325, NULL, 'Guest', 'Logout', 'Auth', 'User  logout', '2026-04-09 07:09:54'),
+(326, NULL, 'Guest', 'Logout', 'Auth', 'User  logout', '2026-04-09 07:09:59'),
+(327, NULL, 'Guest', 'Register', 'Auth', 'User baru dea12 berhasil registrasi', '2026-04-09 07:11:42'),
+(328, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-09 07:12:35'),
+(329, 1, 'admin', 'Update', 'User', 'Mengupdate user: dea12', '2026-04-09 07:12:52'),
+(330, 26, 'dea12', 'Login', 'Auth', 'User dea12 berhasil login', '2026-04-09 07:12:59'),
+(331, 26, 'dea12', 'Ajukan', 'Peminjaman', 'Mengajukan peminjaman: PJM-20260409-1107 - SE2219HX', '2026-04-09 07:18:38'),
+(332, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-09 09:48:10'),
+(333, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-10 07:49:13'),
+(334, 18, 'ale', 'Login', 'Auth', 'User ale berhasil login', '2026-04-10 15:17:36'),
+(335, 3, 'pengguna', 'Login', 'Auth', 'User pengguna berhasil login', '2026-04-12 19:05:51'),
+(336, 3, 'pengguna', 'Logout', 'Auth', 'User pengguna logout', '2026-04-12 19:07:03'),
+(337, 16, 'keysha', 'Login', 'Auth', 'User keysha berhasil login', '2026-04-12 19:07:25'),
+(338, 16, 'keysha', 'Logout', 'Auth', 'User keysha logout', '2026-04-12 19:07:38'),
+(339, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-12 19:07:44'),
+(340, 1, 'admin', 'Hapus', 'User', 'Menghapus user: dea12', '2026-04-12 19:08:15'),
+(341, 1, 'admin', 'Hapus', 'User', 'Menghapus user: ali', '2026-04-12 19:08:43'),
+(342, 1, 'admin', 'Tambah', 'User', 'Menambahkan user: bahlil', '2026-04-12 19:10:38'),
+(343, 1, 'admin', 'Hapus', 'User', 'Menghapus user: bahlil', '2026-04-12 19:10:45'),
+(344, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-12 19:11:20'),
+(345, 18, 'ale', 'Login', 'Auth', 'User ale berhasil login', '2026-04-12 19:11:26'),
+(346, 18, 'ale', 'Ajukan', 'Peminjaman', 'Mengajukan peminjaman: PJM-20260412-1690 - PROMP241', '2026-04-12 19:12:50'),
+(347, 18, 'ale', 'Logout', 'Auth', 'User ale logout', '2026-04-12 19:13:49'),
+(348, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-12 19:13:55'),
+(349, 1, 'admin', 'Hapus', 'Barang', 'Menghapus barang: 82KU00WVID', '2026-04-12 19:14:05'),
+(350, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-12 19:14:32'),
+(351, 18, 'ale', 'Login', 'Auth', 'User ale berhasil login', '2026-04-12 19:14:40'),
+(352, 18, 'ale', 'Logout', 'Auth', 'User ale logout', '2026-04-12 19:18:36'),
+(353, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-12 19:18:40'),
+(354, 1, 'admin', 'Hapus', 'Kategori', 'Menghapus kategori: Laptop', '2026-04-12 19:51:09'),
+(355, 1, 'admin', 'Tambah', 'Kategori', 'Menambahkan kategori: Laptop', '2026-04-12 19:56:30'),
+(356, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-12 20:02:23'),
+(357, 2, 'petugas', 'Login', 'Auth', 'User petugas berhasil login', '2026-04-12 20:02:27'),
+(358, 2, 'petugas', 'Logout', 'Auth', 'User petugas logout', '2026-04-12 20:23:14'),
+(359, 3, 'pengguna', 'Login', 'Auth', 'User pengguna berhasil login', '2026-04-12 20:23:24'),
+(360, 3, 'pengguna', 'Logout', 'Auth', 'User pengguna logout', '2026-04-12 20:23:37'),
+(361, 18, 'ale', 'Login', 'Auth', 'User ale berhasil login', '2026-04-12 20:23:43'),
+(362, 18, 'ale', 'Logout', 'Auth', 'User ale logout', '2026-04-12 20:24:01'),
+(363, 3, 'pengguna', 'Login', 'Auth', 'User pengguna berhasil login', '2026-04-13 07:48:41'),
+(364, 3, 'pengguna', 'Ajukan', 'Peminjaman', 'Mengajukan peminjaman: PJM-20260413-9555 - M70S-11EXS00', '2026-04-13 07:50:18'),
+(365, 3, 'pengguna', 'Ajukan', 'Peminjaman', 'Mengajukan peminjaman: PJM-20260413-1098 - LF24T350FHEXXD', '2026-04-13 07:51:19'),
+(366, 3, 'pengguna', 'Logout', 'Auth', 'User pengguna logout', '2026-04-13 07:51:36'),
+(367, 2, 'petugas', 'Login', 'Auth', 'User petugas berhasil login', '2026-04-13 07:51:41'),
+(368, 2, 'petugas', 'Validasi', 'Peminjaman', 'Memvalidasi peminjaman: PJM-20260413-1098 - Status: disetujui', '2026-04-13 07:52:11'),
+(369, 2, 'petugas', 'Validasi', 'Peminjaman', 'Memvalidasi peminjaman: PJM-20260413-9555 - Status: ditolak', '2026-04-13 07:52:34'),
+(370, 2, 'petugas', 'Logout', 'Auth', 'User petugas logout', '2026-04-13 07:52:43'),
+(371, 3, 'pengguna', 'Login', 'Auth', 'User pengguna berhasil login', '2026-04-13 07:52:48'),
+(372, 3, 'pengguna', 'Logout', 'Auth', 'User pengguna logout', '2026-04-13 07:53:36'),
+(373, 2, 'petugas', 'Login', 'Auth', 'User petugas berhasil login', '2026-04-13 07:53:42'),
+(374, 2, 'petugas', 'Pengembalian', 'Peminjaman', 'Mengembalikan barang: PJM-20260413-1098', '2026-04-13 07:53:52'),
+(375, 2, 'petugas', 'Logout', 'Auth', 'User petugas logout', '2026-04-13 07:55:33'),
+(376, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-13 07:55:40'),
+(377, 1, 'admin', 'Tambah', 'Barang', 'Menambahkan barang: L82', '2026-04-13 07:56:48'),
+(378, 1, 'admin', 'Update', 'Barang', 'Mengupdate barang: M70S-11EXS00', '2026-04-13 07:57:32'),
+(379, 1, 'admin', 'Update', 'Barang', 'Mengupdate barang: M70S-11EXS00', '2026-04-13 07:57:47'),
+(380, 1, 'admin', 'Update', 'Barang', 'Mengupdate barang: M70S-11EXS00', '2026-04-13 07:58:22'),
+(381, 1, 'admin', 'Hapus', 'Barang', 'Menghapus barang: VA24EHE', '2026-04-13 07:58:46'),
+(382, 1, 'admin', 'Update', 'Kategori', 'Mengupdate kategori: PC', '2026-04-13 07:59:36'),
+(383, 1, 'admin', 'Hapus', 'Kategori', 'Menghapus kategori: Handphone', '2026-04-13 08:00:18'),
+(384, 1, 'admin', 'Tambah', 'Kategori', 'Menambahkan kategori: Handphone', '2026-04-13 08:00:29'),
+(385, 1, 'admin', 'Update', 'User', 'Mengupdate user: kinanti', '2026-04-13 08:02:20'),
+(386, 1, 'admin', 'Tambah', 'User', 'Menambahkan user: kinan', '2026-04-13 08:05:28'),
+(387, 1, 'admin', 'Hapus', 'User', 'Menghapus user: kinan', '2026-04-13 08:05:43'),
+(388, 1, 'admin', 'Validasi', 'Peminjaman', 'Memvalidasi peminjaman: PJM-20260412-1690 - Status: disetujui', '2026-04-13 08:07:03'),
+(389, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-13 08:07:53'),
+(390, 3, 'pengguna', 'Login', 'Auth', 'User pengguna berhasil login', '2026-04-13 08:08:00'),
+(391, 3, 'pengguna', 'Update', 'Profile', 'User mengupdate profile', '2026-04-13 08:08:32'),
+(392, 3, 'pengguna', 'Logout', 'Auth', 'User pengguna logout', '2026-04-13 08:08:43'),
+(393, NULL, 'Guest', 'Register', 'Auth', 'User baru aliyah berhasil registrasi', '2026-04-13 08:09:29'),
+(394, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-13 08:10:01'),
+(395, 1, 'admin', 'Update', 'User', 'Mengupdate user: aliyah', '2026-04-13 08:10:33'),
+(396, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-13 08:10:40'),
+(397, 29, 'aliyah', 'Login', 'Auth', 'User aliyah berhasil login', '2026-04-13 08:10:49'),
+(398, 3, 'pengguna', 'Login', 'Auth', 'User pengguna berhasil login', '2026-04-14 22:43:44'),
+(399, 3, 'pengguna', 'Logout', 'Auth', 'User pengguna logout', '2026-04-14 22:45:25'),
+(400, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-14 22:45:31'),
+(401, 1, 'admin', 'Hapus', 'User', 'Menghapus user: ale', '2026-04-14 22:46:07'),
+(402, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-14 22:53:15'),
+(403, 24, 'kinanti', 'Login', 'Auth', 'User kinanti berhasil login', '2026-04-14 22:53:20'),
+(404, 24, 'kinanti', 'Logout', 'Auth', 'User kinanti logout', '2026-04-14 22:53:25'),
+(405, 1, 'admin', 'Login', 'Auth', 'User admin berhasil login', '2026-04-14 22:53:30'),
+(406, 1, 'admin', 'Hapus', 'User', 'Menghapus user: kinanti', '2026-04-14 22:53:44'),
+(407, 1, 'admin', 'Hapus', 'User', 'Menghapus user: dea', '2026-04-14 22:54:01'),
+(408, 1, 'admin', 'Hapus', 'User', 'Menghapus user: aliyah', '2026-04-14 22:54:07'),
+(409, 1, 'admin', 'Tambah', 'User', 'Menambahkan user: alescha', '2026-04-14 22:54:29'),
+(410, 1, 'admin', 'Logout', 'Auth', 'User admin logout', '2026-04-14 23:01:03'),
+(411, 3, 'pengguna', 'Login', 'Auth', 'User pengguna berhasil login', '2026-04-14 23:01:23'),
+(412, 3, 'pengguna', 'Ajukan', 'Peminjaman', 'Mengajukan peminjaman: PJM-20260414-3101 - M70S-11EXS00', '2026-04-14 23:05:51'),
+(413, 3, 'pengguna', 'Logout', 'Auth', 'User pengguna logout', '2026-04-14 23:06:16'),
+(414, 30, 'alescha', 'Login', 'Auth', 'User alescha berhasil login', '2026-04-14 23:06:36'),
+(415, 30, 'alescha', 'Ajukan', 'Peminjaman', 'Mengajukan peminjaman: PJM-20260414-7648 - L82', '2026-04-14 23:09:17'),
+(416, 30, 'alescha', 'Logout', 'Auth', 'User alescha logout', '2026-04-14 23:09:23'),
+(417, 2, 'petugas', 'Login', 'Auth', 'User petugas berhasil login', '2026-04-14 23:09:29'),
+(418, 2, 'petugas', 'Validasi', 'Peminjaman', 'Memvalidasi peminjaman: PJM-20260414-3101 - Status: disetujui', '2026-04-14 23:09:42'),
+(419, 2, 'petugas', 'Logout', 'Auth', 'User petugas logout', '2026-04-14 23:10:16');
 
 -- --------------------------------------------------------
 
@@ -441,17 +555,11 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`id`, `kode_peminjaman`, `user_id`, `barang_id`, `tanggal_pinjam`, `tanggal_kembali`, `tanggal_dikembalikan`, `keperluan`, `status`, `catatan_petugas`, `petugas_id`, `created_at`, `updated_at`) VALUES
-(1, 'PJM-20260310-7553', 3, 2, '2026-03-10', '2026-03-11', NULL, 'Rapat bersama perusahaan A', 'ditolak', 'Rapat dibatalkan', 2, '2026-03-10 10:08:39', '2026-03-10 10:09:13'),
-(2, 'PJM-20260310-6121', 3, 2, '2026-03-10', '2026-03-11', '2026-03-10', 'Rapat bersama perusahaan A pada tanggal 11 maret', 'dikembalikan', '', 1, '2026-03-10 19:23:35', '2026-03-10 19:25:27'),
-(3, 'PJM-20260310-4494', 3, 2, '2026-03-10', '2026-03-11', '2026-03-10', 'Rapat', 'dikembalikan', '-', 2, '2026-03-10 20:26:47', '2026-03-10 20:34:52'),
-(4, 'PJM-20260310-2052', 3, 2, '2026-03-10', '2026-03-11', NULL, 'Ea', 'ditolak', '', 2, '2026-03-10 20:34:24', '2026-03-10 20:35:06'),
-(5, 'PJM-20260310-2962', 3, 2, '2026-03-10', '2026-03-10', NULL, 'rapat', 'ditolak', 'ada', 1, '2026-03-10 20:35:39', '2026-03-13 19:42:08'),
 (6, 'PJM-20260310-4591', 3, 4, '2026-03-10', '2026-03-11', '2026-04-01', 'kerja', 'dikembalikan', '', 2, '2026-03-10 22:12:11', '2026-04-01 08:34:27'),
-(7, 'PJM-20260313-6006', 3, 5, '2026-03-13', '2026-03-13', NULL, '-', 'ditolak', '', 1, '2026-03-13 19:35:54', '2026-04-05 10:34:13'),
-(8, 'PJM-20260405-4659', 3, 2, '2026-04-05', '2026-04-07', NULL, 'Rapat', 'ditolak', '', 1, '2026-04-05 10:37:37', '2026-04-05 10:54:12'),
-(9, 'PJM-20260405-1565', 3, 5, '2026-04-05', '2026-04-06', NULL, '-', 'ditolak', '', 1, '2026-04-05 10:54:35', '2026-04-05 10:57:41'),
-(10, 'PJM-20260405-6202', 3, 5, '2026-04-05', '2026-04-06', NULL, 'rapat', 'pending', NULL, NULL, '2026-04-05 10:58:05', '2026-04-05 10:58:05'),
-(11, 'PJM-20260405-3534', 18, 4, '2026-04-05', '2026-04-06', '2026-04-05', 'rapat', 'dikembalikan', '', 16, '2026-04-05 18:03:32', '2026-04-05 18:06:12');
+(15, 'PJM-20260413-9555', 3, 15, '2026-04-13', '2026-04-14', NULL, 'Rapat', 'ditolak', 'sudah meminjam device lain', 2, '2026-04-13 07:50:18', '2026-04-13 07:52:34'),
+(16, 'PJM-20260413-1098', 3, 21, '2026-04-13', '2026-04-10', '2026-04-13', 'Rapat', 'dikembalikan', '', 2, '2026-04-13 07:51:19', '2026-04-13 07:53:52'),
+(17, 'PJM-20260414-3101', 3, 15, '2026-04-14', '2026-04-15', NULL, 'rapat', 'dipinjam', '', 2, '2026-04-14 23:05:51', '2026-04-14 23:09:42'),
+(18, 'PJM-20260414-7648', 30, 27, '2026-04-14', '2026-04-16', NULL, 'rapat', 'pending', NULL, NULL, '2026-04-14 23:09:17', '2026-04-14 23:09:17');
 
 -- --------------------------------------------------------
 
@@ -480,14 +588,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `nama_lengkap`, `role`, `status`, `telepon`, `alamat`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'admin@inventaris.com', '$2y$10$O.g7DccMEozWxiWbuNRGx.B3eHN6rSl.nZ1h5kjxdJjG6.npm1yze', 'Administrator Inventaris', 'admin', 'aktif', '081221200104', 'Nanjung', '2026-03-10 09:34:00', '2026-04-06 11:18:24'),
 (2, 'petugas', 'petugas@inventaris.com', '$2y$10$ws.fGFZf.upjkhTA5zf1LO2cIiiYaBUzmbYj5lqw64gq.OZG6tVBG', 'Petugas Inventaris', 'petugas', 'aktif', NULL, NULL, '2026-03-10 09:34:00', '2026-04-05 09:22:41'),
-(3, 'pengguna', 'pengguna@inventaris.com', '$2y$10$.ua/o3aeAmyOqPOnb2HejuT4vVyF0umlvcZ1b/zxpqMme2z.Ki87q', 'Pengguna Biasa', 'pengguna', 'aktif', NULL, NULL, '2026-03-10 09:34:00', '2026-04-05 09:22:45'),
+(3, 'pengguna', 'pengguna@inventaris.com', '$2y$10$.ua/o3aeAmyOqPOnb2HejuT4vVyF0umlvcZ1b/zxpqMme2z.Ki87q', 'Pengguna Biasa', 'pengguna', 'aktif', '081221200104', 'Nanjung', '2026-03-10 09:34:00', '2026-04-13 08:08:32'),
 (16, 'keysha', 'key@gmail.com', '$2y$10$7TaruQ33e5xuUPj7pblL6.BIKu18pWHeqTcdFDBAGAMLdxI0Dtutm', 'Keysha Kirana', 'petugas', 'aktif', '081221200104', '-', '2026-04-05 09:22:30', '2026-04-05 18:09:08'),
-(17, 'dea', 'dea@gmail.com', '$2y$10$FsHe3LCBw/u51lELJf5rLef60JFjBhkagvdwEYg6xPfnZN3JIvtM6', 'Dea Amelia', 'pengguna', 'nonaktif', NULL, NULL, '2026-04-05 11:15:53', '2026-04-05 11:15:57'),
-(18, 'ale', 'ale@gmail.com', '$2y$10$T9T2pNZn1Mt6Metvago.DuVbI5nvTjagKV4b5HBLj6ntf9YYEUNQa', 'Alescha Indah Alicia', 'pengguna', 'aktif', NULL, NULL, '2026-04-05 11:21:35', '2026-04-05 11:21:35'),
-(19, 'kinan', 'kin@gmail.com', '$2y$10$qDM/rhivffAFf.X9Qa0yo.Cm4iZSXlZr648SnzuyawwzpVz/URwiG', 'Kinanti Cahya Khaerunnisa', 'pengguna', 'nonaktif', NULL, NULL, '2026-04-05 11:22:13', '2026-04-05 11:22:13'),
-(20, 'karina', 'karina@gmail.com', '$2y$10$aeJAkx8GkWyRncU7me2vGOaVO8IoGZ9hOnq16NqY8q77psKNvYT0C', 'Karina ', 'pengguna', 'nonaktif', NULL, NULL, '2026-04-05 11:22:50', '2026-04-05 11:25:34'),
-(21, 'minjeong', 'minjeong@gmail.com', '$2y$10$Xu7fQaMx4A6vXknDt3M9HOuO.2iDmofEqSL4p2mCfZnhuLYfpA0Ru', 'minjeong', 'pengguna', 'nonaktif', NULL, NULL, '2026-04-05 11:23:57', '2026-04-05 11:23:57'),
-(22, 'ning', 'ning@gmail.com', '$2y$10$G7YBA94RQVoQiust0ZY40e5uCwS6t3v6yUphihjaNOoMOTLrcjetO', 'ningning', 'pengguna', 'nonaktif', NULL, NULL, '2026-04-05 17:42:07', '2026-04-05 17:42:07');
+(30, 'alescha', 'alescha@gmail.com', '$2y$10$7fOGqC5/J/8LiQBco/zlwO.yIbez2hBTc2eni0M02llic6E5aJTey', 'Alescha Indah Alicia', 'pengguna', 'aktif', NULL, NULL, '2026-04-14 22:54:29', '2026-04-14 22:54:29');
 
 --
 -- Indexes for dumped tables
@@ -541,31 +644,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `log_aktivitas`
 --
 ALTER TABLE `log_aktivitas`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=300;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=420;
 
 --
 -- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -581,9 +684,9 @@ ALTER TABLE `barang`
 -- Ketidakleluasaan untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  ADD CONSTRAINT `peminjaman_barang_id_foreign` FOREIGN KEY (`barang_id`) REFERENCES `barang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `peminjaman_petugas_id_foreign` FOREIGN KEY (`petugas_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE SET NULL,
-  ADD CONSTRAINT `peminjaman_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `peminjaman_barang_id_foreign` FOREIGN KEY (`barang_id`) REFERENCES `barang` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `peminjaman_petugas_id_foreign` FOREIGN KEY (`petugas_id`) REFERENCES `users` (`id`) ON UPDATE SET NULL,
+  ADD CONSTRAINT `peminjaman_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

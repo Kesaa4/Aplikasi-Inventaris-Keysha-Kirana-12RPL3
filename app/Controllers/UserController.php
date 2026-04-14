@@ -4,16 +4,19 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 use App\Models\LogAktivitasModel;
+use App\Models\PeminjamanModel;
 
 class UserController extends BaseController
 {
     protected $userModel;
     protected $logModel;
+    protected $peminjamanModel;
 
     public function __construct()
     {
         $this->userModel = new UserModel();
         $this->logModel = new LogAktivitasModel();
+        $this->peminjamanModel = new PeminjamanModel();
     }
 
     public function index()
@@ -128,10 +131,19 @@ class UserController extends BaseController
     public function delete($id)
     {
         $user = $this->userModel->find($id);
-        if ($this->userModel->delete($id)) {
-            $this->logModel->logAktivitas('Hapus', 'User', 'Menghapus user: ' . $user['username']);
-            return redirect()->to('/user')->with('success', 'Data berhasil dihapus');
+
+        $peminjaman = $this->peminjamanModel
+            ->where('user_id', $id)
+            ->countAllResults();
+
+        if ($peminjaman > 0) {
+            return redirect()->to('/user')->with('error', 'User tidak bisa dihapus karena masih memiliki data peminjaman');
         }
-        return redirect()->back()->with('error', 'Gagal menghapus data');
+
+        $this->userModel->delete($id);
+
+        $this->logModel->logAktivitas('Hapus', 'User', 'Menghapus user: ' . $user['username']);
+
+        return redirect()->to('/user')->with('success', 'User berhasil dihapus');
     }
 }

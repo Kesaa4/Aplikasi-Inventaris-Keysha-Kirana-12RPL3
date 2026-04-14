@@ -152,10 +152,16 @@ class BarangController extends BaseController
     public function delete($id)
     {
         $barang = $this->barangModel->find($id);
+
+        if ($barang['status'] === 'dipinjam') {
+            return redirect()->back()->with('error', 'Barang sedang dipinjam, tidak bisa dihapus!');
+        }
+
         if ($this->barangModel->delete($id)) {
             $this->logModel->logAktivitas('Hapus', 'Barang', 'Menghapus barang: ' . $barang['kode_barang']);
             return redirect()->to('/barang')->with('success', 'Data berhasil dihapus');
         }
+
         return redirect()->back()->with('error', 'Gagal menghapus data');
     }
 

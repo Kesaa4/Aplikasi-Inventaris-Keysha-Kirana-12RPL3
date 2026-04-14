@@ -71,7 +71,7 @@ class KategoriController extends BaseController
         return redirect()->back()->withInput()->with('errors', $this->kategoriModel->errors());
     }
 
-    public function delete($id)
+        public function delete($id)
     {
         $kategori = $this->kategoriModel->find($id);
 

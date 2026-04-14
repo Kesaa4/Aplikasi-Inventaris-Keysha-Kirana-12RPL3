@@ -50,7 +50,7 @@
             </div>
         </div>
     </div>
-    <?php endif; ?>
+    <?php endif ;?>
     <div class="col-md-4 mb-3">
         <div class="card bg-warning text-white">
             <div class="card-body">
